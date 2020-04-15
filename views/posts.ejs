@@ -1,0 +1,24 @@
+<%- include("partials/header") %>
+<%- include("partials/messages") %>
+    <div class="jumbotron container" style="margin-top: 7%; width: 60%;">
+        <a href="/"><button class="btn btn-info">Go Back</button></a>
+        <h1 class="w3-lobster" style="text-align: center; font-size: 50px;">
+            Posts
+        </h1>
+        <div class="container">
+            <% posts.forEach(function(post) {  %>
+                <% if(post.author.id.equals(currentUser._id)){ %>
+                    <div class="card" style="width: 100%; margin-bottom: 5px;">
+                        <div class="card-body">
+                            <p class="card-text"><%= post.post %></p>
+                            <form method="POST" action="/deletepost">
+                                <input type="hidden" name="id" value="<%= post._id %>">
+                                <button class="btn btn-danger"> Delete </button>
+                            </form>
+                        </div>
+                    </div>
+                <% } %>
+            <% }); %>
+        </div>
+    </div>
+<%- include("partials/footer") %>

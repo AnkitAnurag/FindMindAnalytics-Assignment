@@ -1,0 +1,16 @@
+<%- include("partials/header") %>
+<%- include("partials/messages") %>
+<div class="jumbotron container" style="margin-top: 7%; width: 60%;">
+    <h1 class="w3-lobster" style="text-align: center; font-size: 50px;">
+        Welcome to the Home Page!
+    </h1>
+    <br>
+    <form action="/" method="POST">
+        <div class="form-group">
+            <label>Enter any text :</label>
+            <input type="text" class="form-control" name="post" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<%- include("partials/footer") %>
